@@ -445,7 +445,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define KEEP_ALIVE_INTERVAL 2000
 #define WAITING_IDENTIFIER "wait"
 #define ECHO_ON_EXECUTE 1
-#define EEPROM_MODE 1
+#define EEPROM_MODE 0
 #undef PS_ON_PIN
 #define PS_ON_PIN -1
 #define JSON_OUTPUT 0
