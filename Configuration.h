@@ -64,8 +64,8 @@
 #define MIXING_EXTRUDER 0
 
 #define DRIVE_SYSTEM 1
-#define XAXIS_STEPS_PER_MM 80
-#define YAXIS_STEPS_PER_MM 80
+#define XAXIS_STEPS_PER_MM 160
+#define YAXIS_STEPS_PER_MM 160
 #define ZAXIS_STEPS_PER_MM 80
 #define EXTRUDER_FAN_COOL_TEMP 50
 #define PDM_FOR_EXTRUDER 0
@@ -161,7 +161,7 @@
 
 // ############# Heated bed configuration ########################
 
-#define HAVE_HEATED_BED 1
+#define HAVE_HEATED_BED 0
 #define HEATED_BED_PREHEAT_TEMP 55
 #define HEATED_BED_MAX_TEMP 120
 #define SKIP_M190_IF_WITHIN 3
@@ -247,20 +247,20 @@ It also can add a delay to wait for spindle to run on full speed.
 #define ENDSTOP_Y_MIN_INVERTING true
 #define MIN_HARDWARE_ENDSTOP_Y true
 #define ENDSTOP_PULLUP_Z_MIN true
-#define ENDSTOP_Z_MIN_INVERTING false
-#define MIN_HARDWARE_ENDSTOP_Z false
+#define ENDSTOP_Z_MIN_INVERTING true
+#define MIN_HARDWARE_ENDSTOP_Z true
 #define ENDSTOP_PULLUP_Z2_MINMAX true
-#define ENDSTOP_Z2_MINMAX_INVERTING false
-#define MINMAX_HARDWARE_ENDSTOP_Z2 false
+#define ENDSTOP_Z2_MINMAX_INVERTING true
+#define MINMAX_HARDWARE_ENDSTOP_Z2 true
 #define ENDSTOP_PULLUP_X_MAX true
 #define ENDSTOP_X_MAX_INVERTING false
 #define MAX_HARDWARE_ENDSTOP_X false
 #define ENDSTOP_PULLUP_Y_MAX true
 #define ENDSTOP_Y_MAX_INVERTING false
 #define MAX_HARDWARE_ENDSTOP_Y false
-#define ENDSTOP_PULLUP_Z_MAX true
-#define ENDSTOP_Z_MAX_INVERTING true
-#define MAX_HARDWARE_ENDSTOP_Z true
+#define ENDSTOP_PULLUP_Z_MAX false
+#define ENDSTOP_Z_MAX_INVERTING false
+#define MAX_HARDWARE_ENDSTOP_Z false
 #define ENDSTOP_PULLUP_X2_MIN true
 #define ENDSTOP_PULLUP_Y2_MIN true
 #define ENDSTOP_PULLUP_Z2_MINMAX true
@@ -274,12 +274,12 @@ It also can add a delay to wait for spindle to run on full speed.
 #define MIN_HARDWARE_ENDSTOP_Y2 false
 #define MAX_HARDWARE_ENDSTOP_X2 false
 #define MAX_HARDWARE_ENDSTOP_Y2 false
-#define MINMAX_HARDWARE_ENDSTOP_Z2 false
+#define MINMAX_HARDWARE_ENDSTOP_Z2 true
 #define X2_MIN_PIN -1
 #define X2_MAX_PIN -1
 #define Y2_MIN_PIN -1
 #define Y2_MAX_PIN -1
-#define Z2_MINMAX_PIN -1
+#define Z2_MINMAX_PIN ORIG_Z_MIN_PIN
 
 
 
@@ -287,10 +287,10 @@ It also can add a delay to wait for spindle to run on full speed.
 
 #define min_software_endstop_x false
 #define min_software_endstop_y false
-#define min_software_endstop_z true
+#define min_software_endstop_z false
 #define max_software_endstop_x true
 #define max_software_endstop_y true
-#define max_software_endstop_z false
+#define max_software_endstop_z true
 #define DOOR_PIN -1
 #define DOOR_PULLUP 1
 #define DOOR_INVERTING 0
@@ -321,13 +321,13 @@ It also can add a delay to wait for spindle to run on full speed.
 #define INVERT_X2_DIR 0
 #define INVERT_Y_DIR 0
 #define INVERT_Y2_DIR 0
-#define INVERT_Z_DIR 0
+#define INVERT_Z_DIR 1
 #define INVERT_Z2_DIR 0
 #define INVERT_Z3_DIR 0
 #define INVERT_Z4_DIR 0
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
-#define Z_HOME_DIR 1
+#define Z_HOME_DIR -1
 #define X_MAX_LENGTH 200
 #define Y_MAX_LENGTH 200
 #define Z_MAX_LENGTH 207
@@ -678,7 +678,7 @@ Values must be in range 1..255
     "zMinEndstop": 0,
     "xMaxEndstop": 0,
     "yMaxEndstop": 0,
-    "zMaxEndstop": 1,
+    "zMaxEndstop": 0,
     "x2MinEndstop": 0,
     "y2MinEndstop": 0,
     "x2MaxEndstop": 0,
@@ -1198,8 +1198,8 @@ Values must be in range 1..255
     "moveZWhenHomed": "0",
     "preheatTime": 30000,
     "multiZEndstopHoming": "0",
-    "z2MinMaxPin": -1,
-    "z2MinMaxEndstop": 0,
+    "z2MinMaxPin": "ORIG_Z_MIN_PIN",
+    "z2MinMaxEndstop": 1,
     "extruderIsZProbe": "0",
     "boardFanMinSpeed": 0,
     "doorPin": -1,
